@@ -1,8 +1,8 @@
 {%set name = "Fabric" %}
-{%set version = "1.12.0" %}
+{%set version = "1.13.1" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "fafa17d69a15fd6ae5f82d28acbf90e1bf15e3d7438fbf0e8691868164c0e9dc" %}
+{%set hash_val = "a0f18b19e59504ae1fd3102b9d4ec368cf2fc59bfd9f20305de1e2e8018727fc" %}
 
 package:
   name: {{ name|lower }}
