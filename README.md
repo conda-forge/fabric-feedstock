@@ -14,9 +14,9 @@ Summary: Fabric is a simple, Pythonic tool for remote execution and deployment.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/tmpl7humvih-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/tmpl7humvih-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/tmpl7humvih-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/tmpl7humvih-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/tmpl7humvih-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/tmpl7humvih-feedstock/branch/master)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/fabric-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/fabric-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/fabric-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/fabric-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/fabric-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/fabric-feedstock/branch/master)
 
 Current release info
 ====================
