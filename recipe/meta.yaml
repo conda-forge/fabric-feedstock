@@ -1,8 +1,9 @@
-{%set name = "Fabric" %}
-{%set version = "1.13.1" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "a0f18b19e59504ae1fd3102b9d4ec368cf2fc59bfd9f20305de1e2e8018727fc" %}
+{% set name = "Fabric" %}
+{% set version = "1.13.2" %}
+{% set compress_type = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash = "98af64a1fe19d9c6a229265aec4e9fdaf3127ac2000db3e2e19007927b23244d" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -11,13 +12,13 @@ package:
 source:
   fn: {{ name }}-{{ version }}.{{ compress_type }}
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  {{ hash_type }}: {{ hash }}
 
 build:
   skip: True  # [py3k]
   entry_points:
     - fab = fabric.main:main
-  number: 0
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -27,7 +28,7 @@ requirements:
 
   run:
     - python
-    - paramiko >=1.10,<2.0
+    - paramiko >=1.10,<3.0
 
 test:
   imports:
@@ -39,9 +40,9 @@ test:
 
 about:
   home: http://fabfile.org
+  license_file: LICENSE
   license: BSD 2-Clause
   license_family: BSD
-  license_file: LICENSE
   summary: 'Fabric is a simple, Pythonic tool for remote execution and deployment.'
   dev_url: https://github.com/fabric/fabric/
   doc_url: http://docs.fabfile.org/
