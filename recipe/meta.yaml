@@ -33,6 +33,7 @@ requirements:
 test:
   imports:
     - fabric
+    - fabric.api
     - fabric.contrib
 
   commands:
