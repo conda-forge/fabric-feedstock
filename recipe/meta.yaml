@@ -1,8 +1,8 @@
-{% set name = "Fabric" %}
-{% set version = "1.14.0" %}
+{% set name = "fabric" %}
+{% set version = "2.1.3" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "81572002a562b26df657ca10d06b5bcfc6fd56b53374037392c83d4a2158208f" %}
+{% set hash = "4aeb5bcd9039a1e1225caed4b2ac296bbc347c869bdef7e3717c13ee49dba58a" %}
 {% set build = 0 %}
 
 package:
@@ -15,9 +15,8 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
-  skip: True  # [py3k]
   entry_points:
-    - fab = fabric.main:main
+    - fab = fabric.main:program.run
   number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
@@ -28,13 +27,13 @@ requirements:
 
   run:
     - python
+    - invoke >=1.0,<2.0
     - paramiko >=1.10,<3.0
+    - cryptography >=1.0
 
 test:
   imports:
     - fabric
-    - fabric.api
-    - fabric.contrib
 
   commands:
     - fab --help
