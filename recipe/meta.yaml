@@ -16,8 +16,8 @@ build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
-    - fab = fabric.main:program.run  # [py3k]
     - fab2 = fabric2.main:program.run  # [py2k]
+    - fab = fabric.main:program.run  # [py3k]
 
 requirements:
   host:
@@ -33,10 +33,10 @@ requirements:
 test:
   imports:
     - fabric
-    - fabric.contrib
 
   commands:
-    - fab --help
+    - fab2 --help  # [py2k]
+    - fab -- help  # [py3k]
 
 about:
   home: http://fabfile.org
