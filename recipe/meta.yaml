@@ -1,33 +1,31 @@
 {% set name = "Fabric" %}
-{% set version = "1.14.0" %}
+{% set version = "2.3.1" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "81572002a562b26df657ca10d06b5bcfc6fd56b53374037392c83d4a2158208f" %}
-{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
   {{ hash_type }}: {{ hash }}
 
 build:
-  skip: True  # [py3k]
+  number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - fab = fabric.main:main
-  number: {{ build }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
-  build:
-    - python
-    - setuptools
+  host:
+    - python <3
+    - pip
 
   run:
-    - python
+    - python <3
     - paramiko >=1.10,<3.0
 
 test:
