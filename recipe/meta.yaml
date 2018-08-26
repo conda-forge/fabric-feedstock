@@ -3,6 +3,7 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "178228b94548194c2e6ff008a51b636d5b19b2eb7551996770d7c999188cf88a" %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -13,19 +14,21 @@ source:
 
 build:
   number: 0
-  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
-    - fab = fabric.main:main
+    - fab = fabric.main:program.run  # [py3k]
+    - fab2 = fabric2.main:program.run  # [py2k]
 
 requirements:
   host:
-    - python <3
+    - python
     - pip
 
   run:
-    - python <3
-    - paramiko >=1.10,<3.0
+    - python
+    - paramiko >=2.4
+    - invoke >=1.0,<2.0
+    - cryptography >=1.1
 
 test:
   imports:
