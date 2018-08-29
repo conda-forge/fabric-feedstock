@@ -1,8 +1,8 @@
 {% set name = "fabric" %}
-{% set version = "2.1.3" %}
+{% set version = "2.3.1" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "4aeb5bcd9039a1e1225caed4b2ac296bbc347c869bdef7e3717c13ee49dba58a" %}
+{% set hash = "178228b94548194c2e6ff008a51b636d5b19b2eb7551996770d7c999188cf88a" %}
 {% set build = 0 %}
 
 package:
@@ -27,9 +27,9 @@ requirements:
 
   run:
     - python
-    - invoke >=1.0,<2.0
-    - paramiko >=1.10,<3.0
-    - cryptography >=1.0
+    - invoke >=1.1,<2.0
+    - paramiko >=2.4
+    - cryptography >=1.1
 
 test:
   imports:
