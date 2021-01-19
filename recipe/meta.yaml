@@ -1,20 +1,20 @@
 {% set name = "fabric" %}
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 24842d7d51556adcabd885ac3cf5e1df73fc622a1708bf3667bf5927576cdfa6
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 47f184b070272796fd2f9f0436799e18f2ccba4ee8ee587796fca192acd46cd2
 
 build:
   number: 0
   noarch: python
   entry_points:
     - fab = fabric.main:program.run
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -33,11 +33,11 @@ test:
     - fab --help
 
 about:
-  home: "http://fabfile.org"
-  license: BSD 2-Clause
+  home: http://fabfile.org
+  license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: "Fabric is a simple, Pythonic tool for remote execution and deployment."
+  summary: Fabric is a simple, Pythonic tool for remote execution and deployment.
   dev_url: https://github.com/fabric/fabric/
   doc_url: http://docs.fabfile.org/
 
