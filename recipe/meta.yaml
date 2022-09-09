@@ -8,9 +8,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 76f8fef59cf2061dbd849bbce4fe49bdd820884385004b0ca59136ac3db129e4
+  patches:
+    - backport-2221.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - fab = fabric.main:program.run
@@ -49,3 +51,4 @@ extra:
   recipe-maintainers:
     - pmlandwehr
     - setu4993
+    - ocefpaf
