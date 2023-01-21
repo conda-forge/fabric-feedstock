@@ -1,5 +1,5 @@
 {% set name = "fabric" %}
-{% set version = "2.7.1" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 76f8fef59cf2061dbd849bbce4fe49bdd820884385004b0ca59136ac3db129e4
+  sha256: bfe960c1ae904e7624af9d40ad5b9b99581ed9c4fd09349c0d02b7486e1d0f89
   patches:
     - backport-2221.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - fab = fabric.main:program.run
