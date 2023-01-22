@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: bfe960c1ae904e7624af9d40ad5b9b99581ed9c4fd09349c0d02b7486e1d0f89
-  patches:
-    - backport-2221.patch
 
 build:
   number: 0
