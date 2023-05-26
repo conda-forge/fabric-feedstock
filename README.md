@@ -1,11 +1,11 @@
-About fabric
-============
+About fabric-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fabric-feedstock/blob/main/LICENSE.txt)
 
 Home: http://fabfile.org
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fabric-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fabric is a simple, Pythonic tool for remote execution and deployment.
 
