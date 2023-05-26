@@ -10,20 +10,21 @@ source:
   sha256: ea1c5ea3956d196b5990ba720cc8ee457fa1b9c6f265ab3b643ff63b05e8970a
 
 build:
-  number: 0
-  noarch: python
   entry_points:
     - fab = fabric.main:program.run
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - pip
     - python >=3.6
+    - pip
   run:
+    - python >=3.6
     - invoke >=2.0
     - paramiko >=2.4
-    - python >=3.6
+    - decorator >=5
 
 test:
   imports:
