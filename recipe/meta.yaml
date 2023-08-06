@@ -1,5 +1,5 @@
 {% set name = "fabric" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ea1c5ea3956d196b5990ba720cc8ee457fa1b9c6f265ab3b643ff63b05e8970a
+  sha256: 81293d7e2b509d37e51bb49a0151191455f5a7ea11ebaa158bdee995b844c668
 
 build:
   entry_points:
@@ -21,6 +21,7 @@ requirements:
     - python >=3.6
     - pip
   run:
+    - deprecated >=1.2
     - python >=3.6
     - invoke >=2.0
     - paramiko >=2.4
