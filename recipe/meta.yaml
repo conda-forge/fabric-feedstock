@@ -1,5 +1,5 @@
 {% set name = "fabric" %}
-{% set version = "3.2.1" %}
+{% set version = "3.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 81293d7e2b509d37e51bb49a0151191455f5a7ea11ebaa158bdee995b844c668
+  sha256: 8783ca42e3b0076f08b26901aac6b9d9b1f19c410074e7accfab902c184ff4a3
 
 build:
   entry_points:
