@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8783ca42e3b0076f08b26901aac6b9d9b1f19c410074e7accfab902c184ff4a3
 
 build:
@@ -14,15 +14,15 @@ build:
     - fab = fabric.main:program.run
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
     - deprecated >=1.2
-    - python >=3.6
+    - python >={{ python_min }}
     - invoke >=2.0
     - paramiko >=2.4
     - decorator >=5
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: http://fabfile.org
