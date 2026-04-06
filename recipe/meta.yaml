@@ -24,7 +24,7 @@ requirements:
   run:
     - deprecated >=1.2
     - python >={{ python_min }}
-    - invoke >=3.0
+    - invoke >=2.0,<3.0
     - paramiko >=2.4
     - decorator >=5
 
